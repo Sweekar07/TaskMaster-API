@@ -1,0 +1,282 @@
+{
+	"info": {
+		"_postman_id": "33aa3e6f-0d39-4b87-85af-be34fb6c9e15",
+		"name": "Users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27634202",
+		"_collection_link": "https://www.postman.com/dark-meteor-361969/workspace/task-management-api-creds/collection/27634202-33aa3e6f-0d39-4b87-85af-be34fb6c9e15?action=share&source=collection_link&creator=27634202"
+	},
+	"item": [
+		{
+			"name": "List All Users (Admin or User Read only)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/auth/users/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"users",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/auth/users/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"users",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 22 Sep 2025 15:25:29 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "608"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"count\": 4,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 1,\n            \"email\": \"sweekar.786b@gmail.com\",\n            \"full_name\": \"Sweekar Bangera\",\n            \"role\": \"admin\",\n            \"date_joined\": \"2025-09-19T14:55:01.847498Z\",\n            \"is_active\": true\n        },\n        {\n            \"id\": 2,\n            \"email\": \"admin@test.com\",\n            \"full_name\": \"Admin User\",\n            \"role\": \"user\",\n            \"date_joined\": \"2025-09-19T15:12:42.480881Z\",\n            \"is_active\": true\n        },\n        {\n            \"id\": 3,\n            \"email\": \"admin1@test.com\",\n            \"full_name\": \"Admin1 User\",\n            \"role\": \"user\",\n            \"date_joined\": \"2025-09-19T16:43:28.531175Z\",\n            \"is_active\": false\n        },\n        {\n            \"id\": 4,\n            \"email\": \"sweekar@test.com\",\n            \"full_name\": \"Sweekar User\",\n            \"role\": \"user\",\n            \"date_joined\": \"2025-09-22T15:07:12.791472Z\",\n            \"is_active\": true\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Soft Delete User  (Admin Only)",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/auth/users/4/soft-delete/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"users",
+						"4",
+						"soft-delete",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success - admin access",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/auth/users/4/soft-delete/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"users",
+								"4",
+								"soft-delete",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 22 Sep 2025 15:26:22 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, PATCH, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User soft deleted successfully\"\n}"
+				},
+				{
+					"name": "invalid - user access",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/auth/users/5/soft-delete/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"users",
+								"5",
+								"soft-delete",
+								""
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 22 Sep 2025 15:33:01 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, PATCH, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"You do not have permission to perform this action.\"\n}"
+				}
+			]
+		}
+	]
+}
